@@ -76,8 +76,9 @@ $(document).ready(function(){
             bandImage.attr("src", results[i].images.fixed_height.url);
 
             // Appending the paragraph and image tag to the animalDiv
-            bandsDiv.append(para);
             bandsDiv.append(bandImage);
+            bandsDiv.append(para);
+            
 
             // Prependng the animalDiv to the HTML page in the "#gifs-appear-here" div
             $("#gifs-go-here").prepend(bandsDiv);
