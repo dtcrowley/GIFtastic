@@ -4,7 +4,25 @@ body {
 
 h4 {
     width: 100%;
+    height: 50px;
     background: #beadad;
     color: #4d2f2f;
     text-align: center;
+    line-height: 25px;
+    padding: 10px;
+    margin-top: 10px;
+}
+#buttons-go-here {
+    width: 66%;
+    margin-left: 100px;
+}
+button {
+    margin-right: 10px;
+    margin-top: 10px;
+}
+#band-form {
+    margin-left: 800px;
+    margin-top: 50px;
+    color: #beadad;
+
 }
