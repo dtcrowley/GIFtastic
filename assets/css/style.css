@@ -26,14 +26,21 @@ button {
     color: #beadad;
 }
 
+#gifs-go-here {
+    width: 66%;
+}
+
 img {
     width: 200px;
     height: 200px;
     margin-right: 10px;
     margin-bottom: 5px;
+    float: left;
 }
 
 p {
+    clear: after;
     margin-bottom: 5px;
     color: #beadad;
+    float: left;
 }

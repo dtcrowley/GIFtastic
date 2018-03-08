@@ -24,7 +24,6 @@ $(document).ready(function(){
           $("#buttons-go-here").append(bandName);
         }
       }
-
       // This function handles events where one button is clicked
       $("#add-band").on("click", function(event) {
         // event.preventDefault() prevents the form from trying to submit itself.
@@ -43,10 +42,10 @@ $(document).ready(function(){
       renderButtons();
 
     $("button").on("click", function() {
-    // Grabbing and storing the data-animal property value from the button
+    // Grabbing and storing the data-name property value from the button
         var bandInfo = $(this).data("name");
 
-    // Constructing a queryURL using the animal name
+    // Constructing a queryURL using the band/artist name
         var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
         bandInfo + "&api_key=dc6zaTOxFJmzC&limit=10";
 
@@ -75,12 +74,11 @@ $(document).ready(function(){
             // Setting the src attribute of the image to a property pulled off the result item
             bandImage.attr("src", results[i].images.fixed_height.url);
 
-            // Appending the paragraph and image tag to the animalDiv
-            bandsDiv.append(bandImage);
+            // Appending the paragraph and image tag to the bandsDiv
             bandsDiv.append(para);
-            
+            bandsDiv.append(bandImage);
 
-            // Prependng the animalDiv to the HTML page in the "#gifs-appear-here" div
+            // Prependng the animalDiv to the HTML page in the "#gifs-go-here" div
             $("#gifs-go-here").prepend(bandsDiv);
         }
         });
