@@ -54,9 +54,7 @@ $(document).ready(function(){
             url: queryURL,
             method: "GET"
         }).then(function(response) {
-        console.log(queryURL);
 
-        console.log(response);
         // storing the data from the AJAX request in the results variable
         var results = response.data;
 
