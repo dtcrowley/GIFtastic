@@ -27,7 +27,7 @@ $(document).ready(function(){
         for (var i = 0; i < results.length; i++) {
 
             // Creating and storing a div tag
-            var bandsDiv = $("<div>");
+            var bandsDiv = $("<div class='clickMe'>");
 
             // Creating a paragraph tag with the result item's rating
             var para = $("<p>").text("Rating: " + results[i].rating);

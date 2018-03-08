@@ -31,16 +31,17 @@ button {
     width: 75%;
 }
 
+.clickMe {
+    float: left;
+}
 img {
     width: 200px;
     height: 200px;
     margin-right: 10px;
     margin-bottom: 20px;
-    float: left;
 }
 
 p {
-    margin-right: 10px;
+    margin-bottom: 5px; 
     color: #beadad;
-    float: left;
 }
