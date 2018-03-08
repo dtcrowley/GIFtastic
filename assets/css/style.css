@@ -34,13 +34,11 @@ img {
     width: 200px;
     height: 200px;
     margin-right: 10px;
-    margin-bottom: 5px;
+    margin-bottom: 20px;
     float: left;
 }
 
 p {
-    clear: after;
-    margin-bottom: 5px;
     color: #beadad;
     float: left;
 }
