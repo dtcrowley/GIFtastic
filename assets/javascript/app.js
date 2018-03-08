@@ -78,7 +78,7 @@ $(document).ready(function(){
             bandsDiv.append(para);
             bandsDiv.append(bandImage);
 
-            // Prependng the animalDiv to the HTML page in the "#gifs-go-here" div
+            // Prependng the bandsDiv to the HTML page in the "#gifs-go-here" div
             $("#gifs-go-here").prepend(bandsDiv);
         }
         });
