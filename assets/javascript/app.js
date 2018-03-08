@@ -66,7 +66,7 @@ $(document).ready(function(){
           var bandName = $("<button>");
           // Adding a class
           bandName.addClass("band");
-          // Adding a data-attribute with a value of the band/artist topic at index i
+          // Adding a data-name attribute with a value of the band/artist topic at index i
           bandName.data("name", topics[i]);
           // Providing the button's text with a value of the band/artist topic at index i
           bandName.text(topics[i]);
@@ -74,10 +74,7 @@ $(document).ready(function(){
           $("#buttons-go-here").append(bandName);
          
         }
-      }
-      
-        // event.preventDefault() prevents the form from trying to submit itself.
-        
+      }      
 
       function changeImage() {
 
@@ -109,9 +106,6 @@ $(document).ready(function(){
         // calling renderButtons which handles the processing of our band/artist topics array
         renderButtons();
       });
-
-       
-        
 
       // Calling the renderButtons function at least once to display the initial list of bands/artists
       renderButtons();
