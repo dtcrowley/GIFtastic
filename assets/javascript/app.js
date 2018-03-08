@@ -37,7 +37,11 @@ $(document).ready(function(){
             
             // Setting the src attribute of the image to a property pulled off the result item
             bandImage.attr("src", results[i].images.fixed_height.url);
-                    
+            bandImage.data("animate", results[i].images.fixed_height.url);
+            bandImage.data("still", results[i].images.fixed_height_still.url);
+            bandImage.data("state", "animate");
+            bandImage.addClass("gif");
+ 
             // Appending the paragraph and image tag to the bandsDiv
             bandsDiv.append(para);
             bandsDiv.append(bandImage);
@@ -71,9 +75,30 @@ $(document).ready(function(){
          
         }
       }
-      // This function handles events where one button is clicked
-      $("#add-band").on("click", function(event) {
+      
         // event.preventDefault() prevents the form from trying to submit itself.
+        
+
+      function changeImage() {
+
+            // The attr jQuery method allows us to get or set the value of any attribute on our HTML element
+            var state = $(this).data("state");
+            // If the clicked image's state is still, update its src attribute to what its data-animate value is.
+            // Then, set the image's data-state to animate
+            // Else set src to the data-still value
+            if (state === "still") {
+                $(this).attr("src", $(this).data("animate"));
+                $(this).data("state", "animate");
+            } else {
+                $(this).attr("src", $(this).data("still"));
+                $(this).data("state", "still");
+            }
+    
+    };
+
+    $(document).on("click", ".band", displayBandInfo);
+    $(document).on("click", ".gif", changeImage);
+    $(document).on("click", "#add-band", function(event) {
         event.preventDefault();
 
         // This line will grab the text from the input box
@@ -84,8 +109,6 @@ $(document).ready(function(){
         // calling renderButtons which handles the processing of our band/artist topics array
         renderButtons();
       });
-
-      $(document).on("click", ".band", displayBandInfo);
 
        
         
