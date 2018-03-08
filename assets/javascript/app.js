@@ -34,9 +34,10 @@ $(document).ready(function(){
 
             // Creating and storing an image tag
             var bandImage = $("<img>");
+            
             // Setting the src attribute of the image to a property pulled off the result item
             bandImage.attr("src", results[i].images.fixed_height.url);
-
+                    
             // Appending the paragraph and image tag to the bandsDiv
             bandsDiv.append(para);
             bandsDiv.append(bandImage);
@@ -44,12 +45,9 @@ $(document).ready(function(){
             // Prepending the bandsDiv to the HTML page in the "#gifs-go-here" div
             $("#gifs-go-here").prepend(bandsDiv);
 
-        }
-
+            }
         });
-
     };
-
 
       //Function for displaying buttons
       function renderButtons() {
@@ -88,6 +86,9 @@ $(document).ready(function(){
       });
 
       $(document).on("click", ".band", displayBandInfo);
+
+       
+        
 
       // Calling the renderButtons function at least once to display the initial list of bands/artists
       renderButtons();
