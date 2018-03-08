@@ -42,4 +42,46 @@ $(document).ready(function(){
       // Calling the renderButtons function at least once to display the initial list of bands/artists
       renderButtons();
 
+    $("button").on("click", function() {
+    // Grabbing and storing the data-animal property value from the button
+        var bandInfo = $(this).data("name");
+
+    // Constructing a queryURL using the animal name
+        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
+        bandInfo + "&api_key=dc6zaTOxFJmzC&limit=10";
+
+    // Performing an AJAX request with the queryURL
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        }).then(function(response) {
+        console.log(queryURL);
+
+        console.log(response);
+        // storing the data from the AJAX request in the results variable
+        var results = response.data;
+
+        // Looping through each result item
+        for (var i = 0; i < results.length; i++) {
+
+            // Creating and storing a div tag
+            var bandsDiv = $("<div>");
+
+            // Creating a paragraph tag with the result item's rating
+            var para = $("<p>").text("Rating: " + results[i].rating);
+
+            // Creating and storing an image tag
+            var bandImage = $("<img>");
+            // Setting the src attribute of the image to a property pulled off the result item
+            bandImage.attr("src", results[i].images.fixed_height.url);
+
+            // Appending the paragraph and image tag to the animalDiv
+            bandsDiv.append(para);
+            bandsDiv.append(bandImage);
+
+            // Prependng the animalDiv to the HTML page in the "#gifs-appear-here" div
+            $("#gifs-go-here").prepend(bandsDiv);
+        }
+        });
+      });
     });

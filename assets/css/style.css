@@ -24,5 +24,11 @@ button {
     margin-left: 800px;
     margin-top: 50px;
     color: #beadad;
+}
 
+img {
+    width: 200px;
+    height: 200px;
+    margin-right: 10px;
+    float: left;
 }
